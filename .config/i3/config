@@ -166,4 +166,6 @@ bindsym $mod+r mode "resize"
 # Disable bar, use polybar instead
 bar { 
     mode hide
+    hidden_state hide
+    modifier none
 }
