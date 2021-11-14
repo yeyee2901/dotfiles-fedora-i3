@@ -1,0 +1,10 @@
+vim
+neovim
+xclip
+tmux
+htop
+rofi
+polybar
+nitrogen
+python3-pip
+nodejs
