@@ -10,10 +10,12 @@
 ;
 ; Config by: yeyee2901
 ; additional notes:
-;   - Please specify network interfaces in:
+;   - Please specify network interfaces for:
 ;       1. module/eth
 ;       2. module/wlan
-;     as different machines have different interface
+;     as different machines have different interface.
+;     I have prepared a sections called [networkinterface] for
+;     specifying the interfaces
 ;
 ;
 ;==========================================================
@@ -22,16 +24,10 @@
 margin-top = 8
 margin-bottom = 8
 
-
-[colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-
+; Specify your network interface here
+[networkinterface]
+ethernet = "enp0s8"
+wlan = "net1"
 
 [solarized]
 back = #002b36
@@ -52,21 +48,46 @@ base1 = #93a1a1
 base2 = #eee8d5
 base3 = #fdf6e3
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU"
-format-prefix-foreground = ${solarized.base3}
-format-underline = ${solarized.magenta}
-label = %percentage:2%%
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM "
+; MAIN STATUS BAR, TOP ONLY
+[bar/main]
+modules-left = i3
+modules-center = date
+modules-right = cpu memory wlan eth
+
+width = 100%
+height = 27
+fixed-center = false
+padding-right = 2
+font-0 = JetBrainsMonoMedium NF-Bold:size=8
+
+background = ${solarized.back}
+foreground = ${solarized.base3}
+
+line-size = 3
+
+module-margin-left = 1
+module-margin-right = 2
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+
+
+
+[module/date]
+type = internal/date
+interval = 5
+date =
+date-alt = "%A, %d %B %Y"
+time = %H:%M
+time-alt = 
+format-prefix = 
 format-prefix-foreground = ${solarized.base3}
-format-underline = ${solarized.violet}
-label = %percentage_used%%
+format-underline = 
+label = %date% %time%
+
 
 [module/i3]
 type = internal/i3
@@ -103,30 +124,37 @@ label-urgent-background = ${solarized.red}
 label-urgent-padding = 2
 
 
-[module/date]
-type = internal/date
-interval = 5
-date =
-date-alt = "%A, %d %B %Y"
-time = %H:%M
-time-alt = 
-format-prefix = 
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU"
 format-prefix-foreground = ${solarized.base3}
-format-underline = 
-label = %date% %time%
+format-underline = ${solarized.magenta}
+label = %percentage:2%%
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "RAM "
+format-prefix-foreground = ${solarized.base3}
+format-underline = ${solarized.violet}
+label = %percentage_used%%
+
 
 [module/eth]
 type = internal/network
-interface = enp0s8
+interface = ${networkinterface.ethernet}
 interval = 3
 format-connected-underline = ${solarized.yellow}
 format-connected-prefix = "ETH: "
 format-connected-prefix-foreground = ${solarized.base2}
 label-connected = %local_ip%
 
+
 [module/wlan]
 type = internal/network
-interface = net1
+interface = ${networkinterface.wlan}
 interval = 3
 format-connected-prefix = "WLAN: "
 format-connected-prefix-foreground = ${solarized.base2}
@@ -134,56 +162,6 @@ format-connected-underline = ${solarized.yellow}
 label-connected = %essid%
 format-disconnected =
 
-[module/powermenu]
-type = custom/menu
-expand-right = true
-format-spacing = 1
-label-open = "PWR"
-label-open-underline = ${solarized.red}
-label-open-foreground = ${solarized.base3}
-label-close = (X)
-label-close-foreground = ${solarized.base3}
-label-separator = |
-label-separator-foreground = ${solarized.base3}
-
-menu-0-0 = "reboot"
-menu-0-0-exec = #powermenu.open.1
-menu-1-0 = "NO"
-menu-1-0-exec = menu-open-0
-menu-1-1 = "YES"
-menu-1-1-exec = sudo reboot
-
-menu-0-1 = "shutdown"
-menu-0-1-exec = #powermenu.open.2
-menu-2-0 = "YES"
-menu-2-0-exec = "sudo poweroff"
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-; MAIN BAR TOP ONLY
-[bar/main]
-width = 100%
-height = 27
-fixed-center = false
-padding-right = 2
-font-0 = JetBrainsMonoMedium NF-Bold:size=8
-
-background = ${solarized.back}
-foreground = ${solarized.base3}
-
-line-size = 3
-
-module-margin-left = 1
-module-margin-right = 2
-
-tray-position = right
-tray-padding = 2
-
-cursor-click = pointer
-
-modules-left = i3
-modules-center = date
-modules-right = cpu memory wlan eth powermenu
 
 [settings]
 screenchange-reload = true
