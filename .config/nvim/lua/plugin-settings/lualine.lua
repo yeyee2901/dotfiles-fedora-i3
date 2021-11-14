@@ -59,7 +59,10 @@ M.setup_lualine = function(theme)
             color_hint = '#05d8f0',
           },
         },
-        lualine_x = {
+
+        -- right section
+        lualine_x = {  },
+        lualine_y = {
           {
              'diff',
              colored = true,
@@ -69,8 +72,7 @@ M.setup_lualine = function(theme)
              symbols = {added = ' ', modified = '柳 ', removed = ' '},
           },
         },
-        lualine_y = { 'branch' },
-        lualine_z = {'location'}
+        lualine_z = { 'branch' },
       },
 
       inactive_sections = {
