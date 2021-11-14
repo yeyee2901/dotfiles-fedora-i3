@@ -8,3 +8,6 @@ polybar
 nitrogen
 python3-pip
 nodejs
+fortune
+cowsay
+figlet
