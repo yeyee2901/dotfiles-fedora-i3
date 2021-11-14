@@ -31,6 +31,9 @@ require('packer').startup(function()
   -- Solarized
   use {'ishan9299/nvim-solarized-lua'}
 
+  -- alternative
+  use {'overcache/NeoSolarized'}
+
   -- Status line
   use {
     'hoob3rt/lualine.nvim', 
