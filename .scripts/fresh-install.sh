@@ -25,3 +25,6 @@ $HOME/.scripts/lsp-install.sh
 
 # Apply italics for tmux
 tic $HOME/.screen-256color.terminfo
+
+# install python provider for nvim
+pip3 install pynvim
