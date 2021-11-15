@@ -118,45 +118,45 @@ _noremap('n', '<Leader>tp', '<cmd>TSPlaygroundToggle<CR>')
 
 
 -- PLUGIN: Telescope
-_noremap('n', '<Leader>t?',  '<cmd>lua require("my-telescope.wrapper").tele_keymaps()<CR>')
-_noremap('n', '<Leader>tc',  '<cmd>lua require("my-telescope.wrapper").tele_command_list()<CR>')
-_noremap('n', '<Leader>tf',  '<cmd>lua require("my-telescope.wrapper").tele_find_files()<CR>')
-_noremap('n', '<Leader>tb',  '<cmd>lua require("my-telescope.wrapper").tele_buffer_lists()<CR>')
-_noremap('n', '<Leader>tz',  '<cmd>lua require("my-telescope.wrapper").tele_current_buffer_fuzzy_find()<CR>')
-_noremap('n', '<Leader>ts',  '<cmd>lua require("my-telescope.wrapper").tele_live_grep()<CR>')
+_noremap('n', '<Leader>t?',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_keymaps()<CR>')
+_noremap('n', '<Leader>tc',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_command_list()<CR>')
+_noremap('n', '<Leader>tf',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_find_files()<CR>')
+_noremap('n', '<Leader>tb',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_buffer_lists()<CR>')
+_noremap('n', '<Leader>tz',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_current_buffer_fuzzy_find()<CR>')
+_noremap('n', '<Leader>ts',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_live_grep()<CR>')
 
 -- Query all function names, vars, and ohter symbols from Tree Sitter queries
-_noremap('n', '<Leader>tt', '<cmd>lua require("my-telescope.wrapper").tele_treesitter()<CR>')
+_noremap('n', '<Leader>tt', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_treesitter()<CR>')
 
 -- LSP in Telescope
-_noremap('n', '<Leader>tldd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_document_diagnostics()<CR>')
-_noremap('n', '<Leader>tlds',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_document_symbols()<CR>')
-_noremap('n', '<Leader>tlws',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_dynamic_workspace_symbols()<CR>')
-_noremap('n', '<Leader>tlwd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_workspace_diagnostics()<CR>')
-_noremap('n', '<Leader>tla',   '<cmd>lua require("my-telescope.wrapper").tele_lsp_range_code_actions()<CR>')
-_noremap('n', '<Leader>tlgd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_definitions()<CR>')
-_noremap('n', '<Leader>tlr',   '<cmd>lua require("my-telescope.wrapper").tele_lsp_references()<CR>')
+_noremap('n', '<Leader>tldd',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_document_diagnostics()<CR>')
+_noremap('n', '<Leader>tlds',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_document_symbols()<CR>')
+_noremap('n', '<Leader>tlws',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_dynamic_workspace_symbols()<CR>')
+_noremap('n', '<Leader>tlwd',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_workspace_diagnostics()<CR>')
+_noremap('n', '<Leader>tla',   '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_range_code_actions()<CR>')
+_noremap('n', '<Leader>tlgd',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_definitions()<CR>')
+_noremap('n', '<Leader>tlr',   '<cmd>lua require("plugin-settings.telescope.wrapper").tele_lsp_references()<CR>')
 
 -- Open quickfix list (you can send any search result from telescope to quickfix list
 -- by pressing Ctrl + q while Telescope is open)
 -- There are 2 ways to fill quickfix list:
 --  - using any Telescope calls
 --  - using vimgrep (ex: vimgrep /def/g ./*.py    -> search all 'def' in *.py file in current dir)
-_noremap('n', '<Leader>tqf', '<cmd>lua require("my-telescope.wrapper").tele_quickfix()<CR>')
+_noremap('n', '<Leader>tqf', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_quickfix()<CR>')
 
 -- Git in Telescope
-_noremap('n', '<Leader>tgb',  '<cmd>lua require("my-telescope.wrapper").tele_git_branches()<CR>')
-_noremap('n', '<Leader>tgs',  '<cmd>lua require("my-telescope.wrapper").tele_git_status()<CR>')
-_noremap('n', '<Leader>tgf',  '<cmd>lua require("my-telescope.wrapper").tele_git_files()<CR>')
-_noremap('n', '<Leader>tgca', '<cmd>lua require("my-telescope.wrapper").tele_git_commits()<CR>')
-_noremap('n', '<Leader>tgcb', '<cmd>lua require("my-telescope.wrapper").tele_git_branch_diff()<CR>')
+_noremap('n', '<Leader>tgb',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_git_branches()<CR>')
+_noremap('n', '<Leader>tgs',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_git_status()<CR>')
+_noremap('n', '<Leader>tgf',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_git_files()<CR>')
+_noremap('n', '<Leader>tgca', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_git_commits()<CR>')
+_noremap('n', '<Leader>tgcb', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_git_branch_diff()<CR>')
 
 -- Emojis
-_noremap('n', '<Leader>tea', '<cmd>lua require("my-telescope.wrapper").tele_emoji_all()<CR>')
-_noremap('n', '<Leader>teg', '<cmd>lua require("my-telescope.wrapper").tele_gitmoji()<CR>')
-_noremap('n', '<Leader>tee', '<cmd>lua require("my-telescope.wrapper").tele_emoji()<CR>')
-_noremap('n', '<Leader>tek', '<cmd>lua require("my-telescope.wrapper").tele_kaomoji()<CR>')
-_noremap('n', '<Leader>tP',  '<cmd>lua require("my-telescope.wrapper").tele_project()<CR>')
+_noremap('n', '<Leader>tea', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_emoji_all()<CR>')
+_noremap('n', '<Leader>teg', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_gitmoji()<CR>')
+_noremap('n', '<Leader>tee', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_emoji()<CR>')
+_noremap('n', '<Leader>tek', '<cmd>lua require("plugin-settings.telescope.wrapper").tele_kaomoji()<CR>')
+_noremap('n', '<Leader>tP',  '<cmd>lua require("plugin-settings.telescope.wrapper").tele_project()<CR>')
 
 
 -- PLUGIN: VimWiki
@@ -170,6 +170,7 @@ _noremap('n', '<Leader>wa',     '<cmd>VimwikiAll2HTML<CR>')
 _noremap('n', '<CR><CR>',       '<cmd>VimwikiFollowLink<CR>')
 _noremap('n', '<CR>s',          '<cmd>VimwikiSplitLink<CR>')
 _noremap('n', '<CR>v',          '<cmd>VimwikiVSplitLink<CR>')
+
 
 -- PLUGIN: Vim-Visual-Multi
 -- Must be done according to documentation likewise:
@@ -191,7 +192,7 @@ vim.g.VM_mouse_mappings = true
 
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
-_noremap('n', '<Leader>tu',    '<cmd>lua require("my-telescope.wrapper").tele_snippets()<CR>')
+_noremap('n', '<Leader>tu',    '<cmd>lua require("plugin-settings.telescope.wrapper").tele_snippets()<CR>')
 
 -- LaTeX Stuffs
 _noremap('n', ';ta', '<cmd>TeXall<CR>')
@@ -200,4 +201,4 @@ _noremap('n', ';tb', '<cmd>TeXbib<CR>')
 
 
 -- MY TELESCOPE PICKERS
-_noremap('n', '<Leader>ssh', '<cmd>lua require("my-telescope.pickers-list.distant_telescope").open()<CR>')
+_noremap('n', '<Leader>ssh', '<cmd>lua require("plugin-settings.telescope.distant").open()<CR>')
