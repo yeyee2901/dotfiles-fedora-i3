@@ -6,13 +6,3 @@ export PATH=$NPM_PACKAGES/bin:$PATH
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export TERM=screen-256color
-
-# TMUX aliases
-alias t='env TERM=screen-256color tmux'
-alias tls='t list-session'
-alias tat='t attach-session'
-alias tnews='t new-session -d -s'
-alias tneww='t new-window -n'           
-alias tkills='t kill-session -t'        # kill session, specify session name
-alias tkillw='t kill-window'            # kill current window
-alias tka='t kill-server'
