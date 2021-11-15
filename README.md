@@ -12,6 +12,8 @@ git clone --bare https://github.com/yeyee2901/dotfiles-fedora-i3.git $HOME/dotfi
 dotfiles checkout
 
 source ~/.alias_envs
+
+dotfiles config --local status.showUntrackedFiles no
 ```
 2. After cloning, restart your terminal so the paths are registered correctly. And then you can run the `fresh-install.sh` script
 ```bash
