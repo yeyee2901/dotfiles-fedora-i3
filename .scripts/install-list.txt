@@ -1,3 +1,5 @@
+gcc
+g++
 vim
 neovim
 xclip
