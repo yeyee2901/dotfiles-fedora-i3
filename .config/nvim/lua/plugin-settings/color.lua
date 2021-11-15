@@ -53,6 +53,9 @@ M.neo_solarized = function()
   lualine.setup_lualine('solarized')
   vim.cmd('colorscheme NeoSolarized')
 
+  -- so my eyes don't hurt!
+  vim.cmd('highlight CmpItemKind guifg=#839496')
+
   vim.cmd("highlight Normal guibg=none")
   vim.cmd("highlight LineNr guibg=none")
 

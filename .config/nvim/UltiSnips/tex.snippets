@@ -1,0 +1,966 @@
+snippet integral_inf_inf "Integral -inf s/d inf"
+\int_{-\infty}^{\infty}
+{
+$1
+} d{$2}
+endsnippet
+
+snippet integral_0_inf "Integral -inf s/d inf"
+\int_{0}^{\infty}
+{
+$1
+} d{$2}
+endsnippet
+
+snippet integral_a_b "Integral -inf s/d inf"
+\int_{$1}^{$2}
+{
+$3
+} d{$4}
+endsnippet
+
+snippet turunan_biasa "Turunan biasa"
+\frac{d{$1}}{d{$2}}
+endsnippet
+
+snippet turunan_orde "Turunan bertingkat"
+\frac{d^{$1}{$2}}{d{$2}^{$1}}
+endsnippet
+
+snippet turunan_parsial_biasa "Turunan parsial biasa"
+\frac{\partial^{$1}}{\partial{$2}}
+endsnippet
+
+snippet turunan_parsial_orde "Turunan parsial bertingkat"
+\frac{\partial^{$1}{$2}}{\partial{$3}^{$1}}
+endsnippet
+
+snippet insert_picture "Insert a picture"
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=$1]{$2}
+    \caption{$3}
+    \label{gambar:$4}
+\end{figure}
+endsnippet
+
+snippet verb "Inline code listing"
+\verb|$1|
+endsnippet
+
+
+snippet code_listing "Without file"
+\begin{lstlisting}[language=$1 , caption={$2}]
+
+\end{lstlisting}
+endsnippet
+
+
+snippet code_source "Source from file"
+\lstinputlisting[language=$1 , caption={$2}]{$3}
+endsnippet
+
+
+snippet boiler_prog "Enable syntax highlighting in TeX build"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A4 paper size, default 11pt font size and oneside for equal margins
+\documentclass[a4paper, 11pt, oneside]{book}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{fouriernc} % Use the New Century Schoolbook font
+\usepackage{afterpage}
+\usepackage{hyperref}
+
+
+% SYNTAX COLOR SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default Pallete:
+%  black	->	  #000000 {0,0,0}
+%  white	->    #f2e5bc {242,229,188}
+%  red		->    #cc6666 {204,102,102}
+%  pink		->    #fe2671 {254,38,114}
+%  green	->    #237526 {35,117,38}
+%  yellow	->    #f8ef40 {248,239,64}
+%  blue		->    #81a2be {129,162,190}
+%  aqua 	->    #8ec07c {142,192,124}
+%  cyan 	->    #8abeb7 {138,190,183}
+%  purple	->    #521c8c {82,28,140}
+%  violet 	->    #b294bb {178,148,187}
+%  orange 	->    #de935f {222,148,95}
+%  brown	->    #a3685a {163,105,90}
+%  bg color ->	  #282c34 {40,44,52}
+
+
+\definecolor{code_black}{RGB}{0,0,0}                     
+\definecolor{code_white}{RGB}{242,229,188}                     
+\definecolor{code_red}{RGB}{204,102,102}                     
+\definecolor{code_pink}{RGB}{254,38,114}                      
+\definecolor{code_green}{RGB}{35,117,38}                     
+\definecolor{code_yellow}{RGB}{248,239,64}                      
+\definecolor{code_blue}{RGB}{129,162,190}                     
+\definecolor{code_aqua}{RGB}{142,192,124}                     
+\definecolor{code_cyan}{RGB}{138,190,183}                     
+\definecolor{code_purple}{RGB}{82,28,140}                     
+\definecolor{code_violet}{RGB}{178,148,187}                     
+\definecolor{code_orange}{RGB}{222,148,95}                      
+\definecolor{code_brown}{RGB}{163,105,90}                      
+\definecolor{code_bg}{RGB}{40,44,52}                      
+
+
+
+\lstdefinestyle{code_style}{
+    backgroundcolor=\color{code_white},
+    commentstyle=\color{code_bg},
+    keywordstyle=\color{code_purple},
+    numberstyle=\tiny\color{code_black},
+    stringstyle=\color{code_green},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single
+}
+
+\lstset{style=code_style}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% EXAMPLE (Direct Injection) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin[language=Python]{lstlisting}
+% import numpy as np
+%
+%
+% if __name__ == '__main__':
+%		pass
+% \end{lstlisting} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% EXAMPLE 2 (source from file) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \lstinputlisting[language=Python]{target_file.py}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyper Link Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=green,
+    urlcolor=blue,
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{\baselineskip} % white space at the top of the page
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%	Title
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % Thick horizontal rule
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+
+    % Thin horizontal rule
+	\rule{\textwidth}{0.4pt} 	
+
+    % Whitespace above the title
+	\vspace{0.75\baselineskip}
+	
+
+	{\LARGE LOREM\\ \LARGE IPSUM}
+	
+
+    % Whitespace below the title
+	\vspace{0.75\baselineskip}
+
+	 % Thin horizontal rule
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+
+    % Thick horizontal rule
+	\rule{\textwidth}{1.6pt}
+	
+    % Whitespace after the title block
+	\vspace{2\baselineskip}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%	Subtitle
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+    Lorem ipsum dolor sit amet
+
+    % Whitespace under the subtitle
+	\vspace*{3\baselineskip}
+	
+    % Publication year
+	2021
+
+\end{titlepage}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DISCLAIMER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Dislaimer}
+Lorem Ipsum
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DAFTAR ISI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DAFTAR ISI LISTING PROGRAM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\lstlistlistingname
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CHAPTER 1 - Lorem Ipsum
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\chapter{Lorem Ipsum}
+
+
+
+
+
+
+
+
+\end{document}
+endsnippet
+
+snippet boiler_laporan "Template Laporan"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A4 paper size, default 11pt font size and oneside for equal margins
+\documentclass[a4paper,12pt,oneside]{report}
+
+\usepackage{xcolor}                     % define color sendiri
+\usepackage{listings}                   % listing program
+\usepackage[utf8]{inputenc}
+\usepackage{courier}                    % untuk listing program, semua \ttfamily jadi monospace
+\usepackage{afterpage}                  % insert blank page
+\usepackage{amsmath, amssymb}           % matematika
+\usepackage{graphicx}                   % embed gambar
+\usepackage{sectsty}                    % chapter & section setup
+%\usepackage{fontspec}
+\usepackage{newtxtext,newtxmath}        % closest to licensed Times New Roman
+\usepackage{geometry}                   % untuk atur margin
+\usepackage[shortlabels]{enumitem}      % custom enumeration items
+
+% hyper-link
+\usepackage[
+    colorlinks=true,linkcolor=blue,citecolor=black
+]{hyperref}                  
+
+% Pereferensian (bibliography pakai bibtex engine)
+\usepackage{csquotes}
+\usepackage[
+    backend=bibtex,%
+    style=authoryear-ibid,%
+    citestyle=authoryear,%
+]{biblatex}   % daftar isi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compile Daftar Isi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pastikan isi file .bib nya
+% Cara ompile daftar isi:
+% 1. Compile *.tex dulu
+% 2. Compile *.aux pakai bibtex
+% 3. Compile *.tex lagi
+
+% Sourcing file daftar isi
+%\addbibresource{DaftarPustaka.bib}
+\bibliography{DaftarPustaka}
+
+% Set to Calibri (require fontspec pkg)
+%\setmainfont{Times New Roman Cyr}
+
+% Setting default path gambar2
+\graphicspath{{./images/}}
+
+
+
+
+% SYNTAX COLOR SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default Pallete:
+%  black	->	  #000000 {0,0,0}
+%  white	->    #f2e5bc {242,229,188}
+%  red		->    #cc6666 {204,102,102}
+%  pink		->    #fe2671 {254,38,114}
+%  green	->    #237526 {35,117,38}
+%  yellow	->    #f8ef40 {248,239,64}
+%  blue		->    #81a2be {129,162,190}
+%  aqua 	->    #8ec07c {142,192,124}
+%  cyan 	->    #8abeb7 {138,190,183}
+%  purple	->    #521c8c {82,28,140}
+%  violet 	->    #b294bb {178,148,187}
+%  orange 	->    #de935f {222,148,95}
+%  brown	->    #a3685a {163,105,90}
+%  bg color ->	  #282c34 {40,44,52}
+
+
+\definecolor{code_black}{RGB}{0,0,0}
+\definecolor{code_white}{RGB}{242,229,188}                     
+\definecolor{code_red}{RGB}{204,102,102}                     
+\definecolor{code_pink}{RGB}{254,38,114}                      
+\definecolor{code_green}{RGB}{35,117,38}                     
+\definecolor{code_yellow}{RGB}{248,239,64}                      
+\definecolor{code_blue}{RGB}{129,162,190}                     
+\definecolor{code_aqua}{RGB}{142,192,124}                     
+\definecolor{code_cyan}{RGB}{138,190,183}                     
+\definecolor{code_purple}{RGB}{82,28,140}                     
+\definecolor{code_violet}{RGB}{178,148,187}                     
+\definecolor{code_orange}{RGB}{222,148,95}                      
+\definecolor{code_brown}{RGB}{163,105,90}                      
+\definecolor{code_bg}{RGB}{40,44,52}                      
+
+
+
+\lstdefinestyle{code_style}{
+    backgroundcolor=\color{code_white},
+    commentstyle=\color{code_bg},
+    keywordstyle=\color{code_purple},
+    numberstyle=\tiny\color{code_black},
+    stringstyle=\color{code_green},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single
+}
+
+\lstset{style=code_style}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setting ulang ke standard paper Indonesia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\lstlistlistingname}{Daftar Listing Program}
+\renewcommand{\listtablename}{Daftar Tabel}
+\renewcommand{\listfigurename}{Daftar Gambar}
+
+
+% Setting pereferensian. output: (Author, 2000)
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+% Setting caption Figure (Gambar)
+\renewcommand{\figurename}{\textbf{Gambar}}
+
+% Setting bab size 14pt pakai \Large
+% Bab pakai angka romawi
+% sub bab pakai angka arab
+\renewcommand{\chaptername}{BAB}
+\chaptertitlefont{\centering\Large}
+\chapternumberfont{\centering\Large}
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{chapter}.\arabic{section}}
+\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+
+% Atur agar notasi listing & figure tidak ikut romawi seperti chapter
+\AtBeginDocument{
+    \renewcommand*{\thelstlisting}{\arabic{chapter}.\arabic{lstlisting}}
+}
+\AtBeginDocument{
+    \renewcommand*{\thefigure}{\arabic{chapter}.\arabic{figure}}
+}
+
+% Setting sub-bab <14pt pakai \large
+\sectionfont{\large}
+\subsectionfont{\large}
+
+% MARGIN SETTINGS %%%%%%%%%%%%
+\geometry{
+    a4paper,
+    top=30mm,
+    left=30mm,
+    right=20mm,
+    bottom=20mm,
+    headsep=15mm,
+    footnotesep=15mm
+}
+
+
+% LINE SPACINGS %%%%%%%%%%%%% 
+\renewcommand{\baselinestretch}{1.0}    % line spacing
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyper Link Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    urlcolor=blue,
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% PARAGRPAH SPACING %%%%%%%%%%%%%%%%%% 
+\setlength{\parindent}{1cm}    % beginning of paragraph indentation
+%\setlength{\parskip}{2cm}     % paragraph spacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+    \centering % Centre everything on the title page
+
+    \vspace*{\baselineskip} % white space at the top of the page
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %	Title
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Whitespace above the title
+    \vspace{0.75\baselineskip}
+
+    {\Large \textbf{LAPORAN} }
+
+    \vspace{2\baselineskip}
+
+    {\Large \textbf{Praktikum Lorem Ipsum}}
+
+    \vspace{2.75\baselineskip}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %	Logo Instansi
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \includegraphics[scale=0.3]{LogoWM.png}
+    \vspace{2.75\baselineskip}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %	Subtitle
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Disusun oleh:\\\
+    Gabriel Sebastian H / 5103018003
+
+    \vspace*{1\baselineskip}
+
+    \textbf{
+        Jurusan Teknik Elektro\\\
+        Fakultas Teknik\\\
+        Universitas Katolik Widya Mandala\\\
+        Surabaya\\\
+        2021
+    } 
+
+\end{titlepage}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DAFTAR ISI (ToC, Tabel, Listing Program, Figure)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\listoftables
+
+\newpage
+\listoffigures
+
+\newpage
+\lstlistoflistings
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CHAPTER 1 - Lorem Ipsum
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\chapter{Lorem Ipsum}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1.1 Sit Dolor Amet
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sit Dolor Amet}
+Contoh pereferensian:
+
+\begin{enumerate}[1), left=0pt]
+    \item
+        Referensi ini diambil dari Buku Einstein \autocite{einstein}.
+
+    \item
+        Atau bisa juga menggunakan footnote, tapi harus manual
+        \footnote{Dirac, \textit{The Principles of Quantum Mechanics}, International series of
+        monographs on physics, Clarendon Press, 1981.}.
+\end{enumerate}
+
+Contoh insertion gambar, pakai environment figure supaya mudah diatur. Caption ditaruh dibawah
+supaya caption muncul dibawah. {\tt label} optional, untuk referensi mudah
+pakai saja.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.1]{LogoWM.png}
+    \caption{Logo WM}
+    \label{gambar:logo_wm}
+\end{figure}
+
+Nah, kalau pakai label bisa di referensikan seperti ini: Gambar \ref{gambar:logo_wm}.
+Nomor gambar muncul karena menggunakan \verb|\ref{gambar:logo_wm}|. 
+dimana \verb|gambar:logo_wm| merupakan nama label yang di definisikan di environment figurenya)
+
+lorem ipsum \dotfill
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 1.1.1 Listing Program
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Listing Program}
+Berikut contoh listing program
+\begin{lstlisting}[language=c , caption={Contoh Listing \textit{Program C}}]
+int main(int argc, const char *argv[])
+{
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DAFTAR PUSTAKA (JANGAN DIUTAK ATIK)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+% Pakai \nocite supaya daftar isi di display walaupun tidak ada sitasi
+\nocite{*}
+
+% Heading bibintoc supaya muncul di  ToC
+\printbibliography[heading=bibintoc, title={Daftar Pustaka}]
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+endsnippet
+
+snippet boiler_tugas "Template Tugas Pendek"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A4 paper size, default 11pt font size and oneside for equal margins
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{xcolor}                     % define color sendiri
+\usepackage{listings}                   % listing program
+\usepackage[utf8]{inputenc}
+\usepackage{courier}                    % untuk listing program, semua \ttfamily jadi monospace
+\usepackage{afterpage}                  % insert blank page
+\usepackage[fleqn]{amsmath}             % matematika
+\usepackage{amssymb}
+\usepackage{graphicx}                   % embed gambar
+\usepackage{newtxtext,newtxmath}        % closest to licensed Times New Roman
+\usepackage{geometry}                   % untuk atur margin
+\usepackage[shortlabels]{enumitem}      % custom enumeration items
+\usepackage{sectsty}                    % custom section & chapters
+
+% hyper-link
+\usepackage[
+    colorlinks=true,linkcolor=blue,citecolor=black
+]{hyperref}                  
+
+% Pereferensian (bibliography pakai bibtex engine)
+\usepackage{csquotes}
+\usepackage[
+    backend=bibtex,%
+    style=authoryear-ibid,%
+    citestyle=authoryear,%
+]{biblatex}   % daftar isi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compile Daftar Isi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pastikan isi file .bib nya
+% Cara ompile daftar isi:
+% 1. Compile *.tex dulu
+% 2. Compile *.aux pakai bibtex
+% 3. Compile *.tex lagi
+
+% Sourcing file daftar isi
+%\addbibresource{DaftarPustaka.bib}
+\bibliography{DaftarPustaka}
+
+% Set to Calibri (require fontspec pkg)
+%\setmainfont{Times New Roman Cyr}
+
+% Setting default path gambar2
+\graphicspath{{./images/}}
+
+
+
+
+% SYNTAX COLOR SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default Pallete:
+%  black	->	  #000000 {0,0,0}
+%  white	->    #f2e5bc {242,229,188}
+%  red		->    #cc6666 {204,102,102}
+%  pink		->    #fe2671 {254,38,114}
+%  green	->    #237526 {35,117,38}
+%  yellow	->    #f8ef40 {248,239,64}
+%  blue		->    #81a2be {129,162,190}
+%  aqua 	->    #8ec07c {142,192,124}
+%  cyan 	->    #8abeb7 {138,190,183}
+%  purple	->    #521c8c {82,28,140}
+%  violet 	->    #b294bb {178,148,187}
+%  orange 	->    #de935f {222,148,95}
+%  brown	->    #a3685a {163,105,90}
+%  bg color ->	  #282c34 {40,44,52}
+
+
+\definecolor{code_black}{RGB}{0,0,0}
+\definecolor{code_white}{RGB}{242,229,188}                     
+\definecolor{code_red}{RGB}{204,102,102}                     
+\definecolor{code_pink}{RGB}{254,38,114}                      
+\definecolor{code_green}{RGB}{35,117,38}                     
+\definecolor{code_yellow}{RGB}{248,239,64}                      
+\definecolor{code_blue}{RGB}{129,162,190}                     
+\definecolor{code_aqua}{RGB}{142,192,124}                     
+\definecolor{code_cyan}{RGB}{138,190,183}                     
+\definecolor{code_purple}{RGB}{82,28,140}                     
+\definecolor{code_violet}{RGB}{178,148,187}                     
+\definecolor{code_orange}{RGB}{222,148,95}                      
+\definecolor{code_brown}{RGB}{163,105,90}                      
+\definecolor{code_bg}{RGB}{40,44,52}                      
+
+
+
+\lstdefinestyle{code_style}{
+    backgroundcolor=\color{code_white},
+    commentstyle=\color{code_bg},
+    keywordstyle=\color{code_purple},
+    numberstyle=\tiny\color{code_black},
+    stringstyle=\color{code_green},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single
+}
+
+\lstset{style=code_style}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setting ulang ke standard sederhana
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setting pereferensian. output: (Author, 2000)
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+% Setting caption Figure (Gambar)
+\renewcommand{\figurename}{\textbf{Gambar}}
+
+% Setting sub-bab <14pt pakai \large
+\sectionfont{\large}
+\subsectionfont{\large}
+
+% MARGIN SETTINGS %%%%%%%%%%%%
+\geometry{
+    a4paper,
+    top=30mm,
+    left=20mm,
+    right=20mm,
+    bottom=30mm,
+    headsep=20mm,
+    footnotesep=15mm
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyper Link Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    urlcolor=blue,
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{Tugas ...}}
+\author{Gabriel S}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[1), left=0pt]
+        %%%%%%%%%%%%%%%%%%%%%%
+        % SOAL 1
+        %%%%%%%%%%%%%%%%%%%%%%
+        \item
+            % SOAL
+            Tentukan hubungan persamaan $V = I.R$!\\\
+
+            % JAWABAN
+            \textbf{\underline{SOLUSI:}}\\\
+            \begin{eqnarray*}
+                V &=& I.R\\\
+                I &=& \frac{V}{R}\\\
+                R &=& \frac{V}{I}       % last gaperlu newline
+            \end{eqnarray*}
+            Dimana:\\\
+            $V$ = Tegangan (volt)\\\
+            $I$ = Arus (ampere)\\\
+            $R$ = Resistansi (ohm, simbol $\Omega$)\\\
+
+            Untuk persamaan $R$, merupakan persamaan yang dependen
+            terhadap material pembentuknya. Hal tersebut dapat dibuktikan
+            dengan persamaan berikut.
+
+            % Indentasi persamaan matematika ditengah pakai
+            % eqnarray* environment
+            \begin{eqnarray}
+                \label{equ:resistansi_jenis}
+                R = \rho \frac{l}{A} 
+            \end{eqnarray}
+            Dimana:\\\
+            $\rho$ = Hambat jenis bahan ($\Omega / m$)\\\
+            $l$ = panjang bahan ($m$)\\\
+            $A$ = luas permukaan bahan ($m^2$)\\\
+
+            Dapat terlihat dari persamaan (\ref{equ:resistansi_jenis}) bahwa persamaan
+            $V = IR$ tentunya juga akan dipengaruhi oleh dimensi dari bahan. Maka
+            persamaan $V = IR$ dapat di \textit{expand} menjadi seperti berikut.
+
+            % Biar persamaan keliatan lebih rapi
+            % setting ini hanya local, lifetime habis setelah
+            % keluar scope
+            {
+            \setlength{\mathindent}{0pt}
+            \begin{align*}
+                V &= I R\\\
+                R &= \rho \frac{l}{A}\\\
+                V &= I (\rho \frac{l}{A})   % last gaperlu newline
+            \end{align*}
+            }
+
+            maka, persamaan tersebut mengimplikasikan bahwa $V \approx l$ .\\\
+
+
+        
+        %%%%%%%%%%%%%%%%%%%%%%
+        % SOAL 2
+        %%%%%%%%%%%%%%%%%%%%%%
+        \item
+            Contoh soal kedua setelah keluar scope. Indentasi agak mendalam karena
+            ada \verb|fleqn| di option \verb|amsmath| \textit{package}. Kalau mau
+            rata kiri semua tambahkan \verb|\setlength{\mathindent}{0pt}| di
+            \textit{environment}-nya, dan di \textit{surround} dengan \{\}.
+            \begin{align*}
+                V &= I R\\\
+                R &= \rho \frac{l}{A}\\\
+                V &= I (\rho \frac{l}{A})\\\
+            \end{align*}
+            Coba insert gambar.
+            {
+                \begin{figure}[h]
+                    \centering
+                    \label{fig:logo_wm}
+                    \includegraphics[scale=0.1]{images/LogoWM.png}
+                    \caption{Logo WM}
+                \end{figure}
+            }
+
+
+    
+\end{enumerate} % END of Tugas
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DAFTAR PUSTAKA (JANGAN DIUTAK ATIK)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+% Pakai \nocite supaya daftar isi di display walaupun tidak ada sitasi
+\nocite{*}
+
+% Heading bibintoc supaya muncul di  ToC
+\printbibliography[heading=bibintoc, title={Daftar Pustaka}]
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+endsnippet
+
+snippet boiler_tugas_pendek "Tugas pendek"
+\documentclass[a4paper,12pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{afterpage}            % insert blank page
+\usepackage[fleqn]{amsmath}       % matematika
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}             % embed gambar
+\usepackage{newtxtext,newtxmath}  % closest to licensed Times New Roman
+\usepackage{geometry}             % untuk atur margin
+\usepackage{sectsty}
+\usepackage{steinmetz}            % untuk notasi phasor di EE degree
+\usepackage{fancyhdr}
+
+\usepackage[
+    colorlinks=true,linkcolor=blue,citecolor=black
+]{hyperref}                  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SETUPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{margin=1in}
+
+\sectionfont{\large}
+\subsectionfont{\large}
+
+\renewcommand{\figurename}{\textbf{Gambar}}
+
+\parindent 0pt % lebih baik no indent kecuali bener2 laporan resmi
+
+
+% Header %%%%%%%%
+\pagestyle{fancy}
+\fancyhead{}    % clear default headers
+\fancyfoot{}
+\fancyhead[L]{\large\textbf{$1}}  % Nama tugas
+\fancyhead[R]{Gabriel S / 5103018003}
+
+% Footer %%%%%%%%
+\fancyfoot[C]{JTE-UKWMS}
+\fancyfoot[R]{$2}       % Tanggal
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% SNIPPET: soal_jwb -> generate pairs of soal-jwb section
+$3
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+endsnippet
+
+snippet soal_jwb "Generate soal jawab u/ template tugas 2"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Soal $1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soal $1}
+$2
+
+\subsection*{Jawaban}
+
+
+\vfill
+
+endsnippet

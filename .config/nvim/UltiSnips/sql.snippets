@@ -1,0 +1,17 @@
+snippet create_table "Create table"
+DROP TABLE IF EXISTS \`$1\`;
+CREATE TABLE IF NOT EXISTS \`$1\` (
+	\`$2\`				INT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+	\`$3\`,
+
+	CONSTRAINT \`pk_$2\` PRIMARY KEY (\`$2\`)
+);
+endsnippet
+
+snippet foreign_key_const "Foreign Key constraint"
+CONSTRAINT \`fk_$1\` FOREIGN KEY (\`$1\`) REFERENCES $2(\`$3\`)
+endsnippet
+
+snippet foreign_key "Foreign Key without constraint"
+FOREIGN KEY (\`$1\`) REFERENCES $2(\`$3\`)
+endsnippet
