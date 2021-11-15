@@ -23,3 +23,23 @@ chmod +x $HOME/.scripts/fresh-install.sh
 $HOME/.scripts/fresh-install.sh
 ```
 3. Also, make sure to check the install scripts in case you want to add something else.
+
+## Features
+- **i3** -  window manager
+- **rofi** - Program launcher ( Win + Enter )
+- **Alacritty** - Terminal with JetBrains Mono Nerd Font ( Win + t )
+   - Font JetBrains Mono Nerd Font in ~/.fonts/
+- **Tmux** - For terminal session manager, supporting italics
+- **polybar** - Customizable status bar
+- fresh install script
+
+- EDITOR: **Neovim 0.5.1** :
+  - **Packer** - Plugin manager
+  - **Color** - Solarized & NeoSolarized (default: neo)
+  - **Nvim Tree** - File tree viewer
+  - **nvim CMP** - Completion engine
+  - **Ultisnips** - Snippet engine
+  - **LSP** - For IDE experience, using native LSP (bye coc.nvim)
+  - **Treesitter** - for better syntax highlighting
+  - **Telescope** - Extendable & customizable fuzzy finder
+  - **Distant** - Remote development
