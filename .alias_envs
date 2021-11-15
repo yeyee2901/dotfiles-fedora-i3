@@ -21,3 +21,6 @@ alias tka='t kill-server'
 # (N)VIM aliases
 alias v="vim"
 alias nv="nvim"
+
+# Dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
