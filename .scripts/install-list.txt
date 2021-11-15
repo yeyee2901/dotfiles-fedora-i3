@@ -13,3 +13,4 @@ nodejs
 fortune
 cowsay
 figlet
+flameshot

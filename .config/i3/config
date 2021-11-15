@@ -39,11 +39,13 @@ bindsym $mod+t exec $terminal
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-#bindsym $mod+Return exec --no-startup-id dmenu_run
-bindsym $mod+Return exec rofi -show
+bindsym $mod+Return exec rofi -sidebar-mode -show window run
 
 # Start firefox
 bindsym $mod+b exec firefox
+
+# Screen capture
+bindsym Print exec flameshot gui
 
 # change focus (MOD + hjkl)
 bindsym $mod+h focus left
