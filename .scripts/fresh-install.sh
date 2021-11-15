@@ -22,3 +22,6 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 
 chmod +x $HOME/.scripts/lsp-install.sh
 $HOME/.scripts/lsp-install.sh
+
+# Apply italics for tmux
+tic $HOME/.screen-256color.terminfo
