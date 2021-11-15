@@ -17,5 +17,7 @@ source ~/.alias_envs
 ```bash
 chmod +x $HOME/.scripts/lsp-install.sh
 chmod +x $HOME/.scripts/fresh-install.sh
+
+$HOME/.scripts/fresh-install.sh
 ```
 3. Also, make sure to check the install scripts in case you want to add something else.
